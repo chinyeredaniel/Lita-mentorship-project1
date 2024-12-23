@@ -1,0 +1,135 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Navigation Bar */
+  header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background: #000;
+    margin: 3px 0;
+  }
+  
+  /* Sidebar Menu */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    height: 100%;
+    background: #fff;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 1.5rem;
+  }
+  
+  .sidebar.active {
+    right: 0;
+  }
+  
+  .close-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    text-align: right;
+  }
+  
+  .nav-links {
+    list-style: none;
+    margin-top: 2rem;
+  }
+  
+  .nav-links li {
+    margin: 1rem 0;
+  }
+  
+  .menu-item {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .submenu {
+    display: none;
+    list-style: none;
+    margin-left: 1rem;
+  }
+  
+  .submenu li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.9rem;
+  }
+  
+  .auth-links {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  .login {
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  
+  .register {
+    background: #000;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    margin: 2rem 1rem;
+  }
+  
+  .hero img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .learn-more {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  
