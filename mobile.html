@@ -1,67 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Interactive Page</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="./css/mobile.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Chinyere Daniel | Intro section with Responsive Mobilemenu dropdown navigation</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="./css/mobile.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 </head>
 <body>
-  <!-- Navigation -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">snap</div>
-      <div class="hamburger-menu" id="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <!-- Sidebar Menu -->
-      <div class="sidebar" id="sidebar">
-        <div class="close-btn" id="close-menu">&times;</div>
-        <ul class="nav-links">
-          <li class="dropdown">
-            <a href="#" class="menu-item">Features ▼ <span>&#9662;</span></a>
-            <ul class="submenu">
-              <li><a href="#">Todo List</a></li>
-              <li><a href="#">Calendar</a></li>
-              <li><a href="#">Reminders</a></li>
-              <li><a href="#">Planning</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="menu-item"> Company ▼ <span>&#9662;</span></a>
-            <ul class="submenu">
-              <li><a href="#">History</a></li>
-              <li><a href="#">Our Team</a></li>
-              <li><a href="#">Blog</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-        <div class="auth-links">
-          <a href="#" class="login">Login</a>
-          <button class="register">Register</button>
+    <header>
+        <div class="container">
+            <div class="logo">Snap</div>
+            <div class="menu-icon">☰</div>
         </div>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Main Content -->
-  <section class="hero">
-    <div class="hero-image">
-      <img src="./images/image-hero-desktop.png">
+    </header>
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="menu-content">
+            <div class="menu-close"> X </div>
+            <ul>
+                <li class="dropdown">
+                    <a href="#"> Features <span class="arrow">▼</span></a>
+                    <ul class="submenu">
+                        <a href="#"><img src="./images/icon-todo.svg" > Todo List </a>
+                        <a href="#"><img src="./images/icon-calendar.svg" > Calender </a>
+                        <a href="#"><img src="./images/icon-reminders.svg" > Reminders </a>
+                        <a href="#"><img src="./images/icon-planning.svg" > planning </a> 
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Company <span class="arrow">▼</span></a>
+                    <ul class="submenu">
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <div class="buttons">
+                <button class="login-btn">Login</button>
+                <button class="register-btn">Register</button>
+            </div>
+        </div>
     </div>
-    <div class="hero-content">
-      <h1>Make remote work</h1>
-      <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
-      <button class="learn-more">Learn more</button>
-    </div>
-  </section>
 
-
-  <script src="script.js"></script>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="./images/image-hero-mobile.png" alt="Person working remotely on a laptop"> 
+                <h1> Make remote work </h1>
+                <p> Get your team in sync, no matter your<br> location. Streamline processes, create <br>
+                    team rituals, and watch productivity soar.</p>
+                <button class="learn-more"> Learn More</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="logos">
+                <img src="./images/client-databiz.svg" alt="Databiz logo">
+                <img src="./images/client-audiophile.svg" alt="Audiophile logo">
+                <img src="./images/client-meet.svg" alt="Meet logo">
+                <img src="./images/client-maker.svg" alt="Maker logo">
+            </div>
+        </div>
+    </footer>
+    <script src="../javascript/mobile.js"></script>
 </body>
 </html>
