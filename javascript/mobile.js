@@ -1,28 +1,19 @@
-// Select elements
-const menuToggle = document.getElementById("menu-toggle");
-const sidebar = document.getElementById("sidebar");
-const closeMenu = document.getElementById("close-menu");
-const dropdownItems = document.querySelectorAll(".menu-item");
 
-// Toggle sidebar visibility
-menuToggle.addEventListener("click", () => {
-  sidebar.classList.add("active");
-});
-
-closeMenu.addEventListener("click", () => {
-  sidebar.classList.remove("active");
-});
-
-// Toggle dropdown menus
-dropdownItems.forEach((item) => {
-  item.addEventListener("click", (e) => {
-    e.preventDefault();
-    const submenu = item.nextElementSibling;
-
-    if (submenu.style.display === "block") {
-      submenu.style.display = "none";
-    } else {
-      submenu.style.display = "block";
-    }
+const menuIcon = document.querySelector('.menu-icon');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const dropdownToggles = document.querySelectorAll('.dropdown');
+  
+  menuIcon.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
   });
-});
+  
+  const menuClose = document.querySelector('.menu-close');
+  menuClose.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+  });
+  
+  dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+          toggle.classList.toggle('open');
+      });
+  });
