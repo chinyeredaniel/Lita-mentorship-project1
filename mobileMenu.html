@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MobileMenu Expanded with dropdown navigation </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial,sans-serif;
+            background-color: white;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+             max-width: 375px; /* Adjust for mobile screen size */
+            margin: 0 auto;
+            padding:  20px 0;
+            gap: 12rem;
+        }
+        header {
+             padding: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            /* align-items: center; */
+    }
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .menu-icon {
+        font-size: 24px;
+        color: #333;
+        cursor: pointer;
+    }
+
+    .mobile-menu-overlay {
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 90%;
+        background: white;
+        background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+        z-index: 999;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .mobile-menu-overlay.active {
+        transform: translateX(0);
+    }
+
+    .menu-content {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-40%, -40%);
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 3px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 14%; /* Adjust width as needed */
+        height: 100%;
+    }
+    .menu-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        color: #333;
+        cursor: pointer;
+    }
+    .menu-content ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .menu-content ul li {
+        position: relative;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    .menu-content ul li a {
+        text-decoration: none;
+        color: #000;
+    }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown .arrow {
+        margin-left: 5px;
+        transform: rotate(0deg);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .dropdown.open .arrow {
+        transform: rotate(-90deg);
+    }
+
+    .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        padding: 2rem;
+        font-size: 14px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        /* overflow: hidden; */
+        z-index: 1;
+    }
+
+    .dropdown:hover .submenu {
+        display: block;
+    }
+    .submenu li {
+        margin-bottom: 5px;
+    }
+
+    .submenu li a {
+        font-size: 14px;
+    }
+    .submenu li a img{
+        display: flex;
+        justify-content: space-between;
+        /* margin-right: 5px;  */
+        width: 8px;
+    }
+    .buttons {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .buttons button {
+        background-color:white;
+        color: #000;
+        padding: 10px ;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+    .buttons button.register-btn{
+        border: 1px solid #333;
+        border-radius: 20px;
+    }
+        /* Hero section styles */
+    .hero {
+        text-align: center;
+        padding: 40px 0;
+        margin-top: 0;
+    }
+
+    .hero-content {
+        position: relative;
+    }
+
+    .hero-content img {
+        width: 100%;
+        max-width: 300px; /* Adjust image size as needed */
+        margin-bottom: 20px;
+        margin-top: 0;
+    }
+    .hero h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+    .hero p {
+        font-size: 16px;
+        color: #333;
+    }
+    .learn-more {
+        background-color:#000;
+        color: #fff;
+        padding: 0.75rem 1.5rem ;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+    .logos {
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 0;
+        margin-bottom: 5rem;
+    }
+    .logos img {
+        text-align: center;
+        padding: 20px 0;
+        width: 50px;
+        margin: 0 10px;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Snap</div>
+            <div class="menu-icon">☰</div>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="menu-content">
+            <div class="menu-close"> X </div>
+            <ul>
+                <li class="dropdown">
+                    <a href="#"> Features ▼ </a>
+                    <ul class="submenu">
+                        <a href="#"><img src="../images/icon-todo.svg" > Todo List </a>
+                        <a href="#"><img src="../images/icon-calendar.svg" > Calender </a>
+                        <a href="#"><img src="../images/icon-reminders.svg" > Reminders </a>
+                        <a href="#"><img src="../images/icon-planning.svg" > planning </a> 
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Company <span class="arrow">▼</span></a>
+                    <ul class="submenu">
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <div class="buttons">
+                <button class="login-btn">Login</button>
+                <button class="register-btn">Register</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="../images/image-hero-mobile.png" alt="Person working remotely on a laptop">
+                <h1>Make remote work</h1>
+                <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+                <button class="learn-more">Learn More</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="logos">
+                <img src="../images/client-databiz.svg" alt="Databiz logo">
+                <img src="../images/client-audiophile.svg" alt="Audiophile logo">
+                <img src="../images/client-meet.svg" alt="Meet logo">
+                <img src="../images/client-maker.svg" alt="Maker logo">
+            </div>
+        </div>
+    </footer>
+    <script src="../javascript/script.js"></script>
+</body>
+</html>
